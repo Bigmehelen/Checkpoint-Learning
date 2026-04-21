@@ -2,7 +2,7 @@ package main
 
 func HashCode(s string) string {
 	n := len(s)
-	result := make([]byte, n)
+	result := ""
 
 	for i := 0; i < n; i++ {
 		hash := (int(s[i]) + n) % 127
@@ -10,8 +10,9 @@ func HashCode(s string) string {
 		if hash < 32 {
 			hash += 32
 		}
-		result[i] = byte(hash)
+		result += string(hash)
 
 	}
-	return string(result) 	
+	return result + "\n"
+
 } 
