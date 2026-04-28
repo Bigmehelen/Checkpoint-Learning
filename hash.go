@@ -10,7 +10,7 @@ func HashCode(s string) string {
 		if hash < 32 {
 			hash += 32
 		}
-		result += string(hash)
+		result += string(rune(hash))
 
 	}
 	return result + "\n"
