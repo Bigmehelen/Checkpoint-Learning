@@ -1,24 +1,23 @@
 package main 
 
-import "fmt"
+import "github.com/01-edu/z01"
 
 func PrintMemory(arr [10]byte) {
 	for i := 0; i < len(arr); i++ {
-		fmt.Printf("%02x", arr[i])
+		PrintHex(arr[i])
 
-		if i != len(arr) - 1 {
-		fmt.Print(" ")
+		if i != len(arr)-1{
+			z01.PrintRune(' ')
 		}
+		z01.PrintRune(rune(arr[i]))
+		z01.PrintRune('\n')
 	}
-	fmt.Println()
+	z01.PrintRune('\n')
+	
+}
 
-	for i := 0; i < len(arr); i++ {
-		if arr[i] >= 32 && arr[i] <= 126 {
-			fmt.Printf("%c", arr[i])
-		}else{
-			fmt.Print(".")
-		}
-	}
-	fmt.Println()	
-
+func PrintHex(b byte) {
+	base := "0123456789abcdef"
+	z01.PrintRune(rune(base[b/16]))
+	z01.PrintRune(rune(base[b%16]))
 }
