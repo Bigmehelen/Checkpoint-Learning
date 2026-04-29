@@ -6,7 +6,7 @@ func UniqueCount(s1, s2 string) int {
 
 	m1 := make(map[rune]bool)
 	m2 := make(map[rune]bool)
-
+ 
 	for _, ch := range s1 {
 		m1[ch] = true
 	}
